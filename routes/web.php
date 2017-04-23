@@ -12,5 +12,45 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.admin');
+});
+
+Auth::routes();
+
+
+Route::group([
+    'middleware' => ['web', 'auth'],
+], function () {
+
+
+    Route::get('/dashboard', 'HomeController@index');
+
+
+//    Route::group();
+
+
+
+    // owner
+    Route::group([
+        'middleware' => ['owner'],
+    ], function () {
+        Route::get('/dashboard', 'HomeController@index');
+
+//        Route::get('report-cane-truck');
+    });
+
+    // members
+    Route::group([
+        'middleware' => ['members'],
+    ], function () {
+
+    });
+
+    // drivers
+    Route::group([
+        'middleware' => ['drivers'],
+    ], function () {
+
+    });
+
 });
