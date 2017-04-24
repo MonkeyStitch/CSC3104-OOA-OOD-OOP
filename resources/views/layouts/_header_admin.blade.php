@@ -56,14 +56,19 @@
                     <a href="{{ url('work-table') }}"><i class="fa fa-table fa-fw"></i> ตารางงาน</a>
                 </li>
                 <li>
-                    <a href="{{ url('managements/members') }}"><i class="fa fa-edit fa-fw"></i> จัดการข้อมูลพนักงาน</a>
+                    <a href="{{ url('managements/drivers') }}"><i class="fa fa-edit fa-fw"></i> จัดการข้อมูลพนักงานขับรถบรรทุก</a>
                 </li>
                 <li>
-                    <a href="{{ url('managements/drivers') }}"><i class="fa fa-wrench fa-fw"></i> จัดการข้อมูลรถบรรทุก</a>
+                    <a href="{{ url('managements/trunk') }}"><i class="fa fa-wrench fa-fw"></i> จัดการข้อมูลรถบรรทุก</a>
                 </li>
-                <li>
-                    <a href="{{ url('managements/sugarcane') }}"><i class="fa fa-sitemap fa-fw"></i> ข้อมูลไร่</a>
-                </li>
+
+                {{--<li>--}}
+                    {{--<a href="{{ url('managements/members') }}"><i class="fa fa-edit fa-fw"></i> จัดการข้อมูลสมาชิก(ลูกไร่)</a>--}}
+                {{--</li>--}}
+
+                {{--<li>--}}
+                    {{--<a href="{{ url('managements/sugarcane') }}"><i class="fa fa-sitemap fa-fw"></i> ข้อมูลไร่</a>--}}
+                {{--</li>--}}
             </ul>
         </div>
         <!-- /.sidebar-collapse -->

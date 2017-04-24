@@ -24,33 +24,66 @@ Route::group([
 
 
     Route::get('/dashboard', 'HomeController@index');
+    Route::get('/report-cane-truck', 'HomeController@report');
+
+    Route::get('/work-table', 'HomeController@work');
 
 
-//    Route::group();
-
-
-
-    // owner
     Route::group([
-        'middleware' => ['owner'],
-    ], function () {
-        Route::get('/dashboard', 'HomeController@index');
-
-//        Route::get('report-cane-truck');
-    });
-
-    // members
-    Route::group([
-        'middleware' => ['members'],
+        'prefix' => 'managements'
     ], function () {
 
+        // owner
+
+
+        // members
+        Route::resource('members', 'driversController');
+
+
+        // drivers
+        Route::resource('drivers', 'driversController');
+
+
+        // trunk
+        Route::resource('trunk', 'TrunkController');
+
+
+        // sugarcane
+        Route::resource('sugarcane', 'TrunkController');
+
+
     });
 
-    // drivers
-    Route::group([
-        'middleware' => ['drivers'],
-    ], function () {
 
-    });
+
+
+
+
+
+
+
+//
+//    // owner
+//    Route::group([
+//        'middleware' => ['owner'],
+//    ], function () {
+//        Route::get('/dashboard', 'HomeController@index');
+//
+////        Route::get('report-cane-truck');
+//    });
+//
+//    // members
+//    Route::group([
+//        'middleware' => ['members'],
+//    ], function () {
+//
+//    });
+//
+//    // drivers
+//    Route::group([
+//        'middleware' => ['drivers'],
+//    ], function () {
+//
+//    });
 
 });
